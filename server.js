@@ -11,7 +11,14 @@ const app = express();
 // middleware
  //app.use(cors());
 //https://connecto-frontend.onrender.com
-app.use(cors({ origin: "https://connecto-frontend.onrender.com", credentials: true }));
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://connecto-frontend.onrender.com"
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);

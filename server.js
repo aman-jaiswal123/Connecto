@@ -9,7 +9,9 @@ const userRoutes = require("./routes/userRoutes");
 const app = express();
 
 // middleware
-app.use(cors());
+//app.use(cors());
+//https://connecto-frontend.onrender.com
+app.use(cors({ origin: "https://connecto-frontend.onrender.com" }))
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);

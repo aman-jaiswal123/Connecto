@@ -9,9 +9,9 @@ const userRoutes = require("./routes/userRoutes");
 const app = express();
 
 // middleware
-//app.use(cors());
+ //app.use(cors());
 //https://connecto-frontend.onrender.com
-app.use(cors({ origin: "https://connecto-frontend.onrender.com" }))
+app.use(cors({ origin: "https://connecto-frontend.onrender.com", credentials: true }));
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
@@ -30,6 +30,6 @@ app.get("/", (req, res) => {
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB connected");
-    app.listen(5000, () => console.log("Server started on port 5000"));
+    app.listen(5000, "0.0.0.0", () => console.log("Server started on port 5000"));
   })
   .catch(err => console.log(err));

@@ -11,14 +11,16 @@ const app = express();
 // middleware
  //app.use(cors());
 //https://connecto-frontend.onrender.com
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "http://localhost:5174",
-    "https://connecto-frontend.onrender.com"
-  ],
-  credentials: true
-}));
+// app.use(cors({
+//   origin: [
+//     "http://localhost:5173",
+//     "http://localhost:5174",
+//     "https://connecto-frontend.onrender.com"
+//   ],
+//   credentials: true
+// }));
+app.use(cors());
+
 
 app.use(express.json());
 
